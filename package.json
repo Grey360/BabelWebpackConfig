@@ -1,0 +1,27 @@
+{
+  "name": "gailor-babel-webpack-oss-2018",
+  "version": "1.0.0",
+  "description": "OSS course",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Grey360/BabelWebpackConfig.git"
+  },
+  "keywords": [
+    "Gailor"
+  ],
+  "author": "Gailor PETEMOYA",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Grey360/BabelWebpackConfig/issues"
+  },
+  "homepage": "https://github.com/Grey360/BabelWebpackConfig#readme",
+  "devDependencies": {
+    "babel-core": "^6.26.3",
+    "babel-loader": "^7.1.4",
+    "webpack": "^4.6.0"
+  }
+}
