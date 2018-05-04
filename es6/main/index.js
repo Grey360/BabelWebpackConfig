@@ -7,7 +7,11 @@ const fs = require("fs");
 // My /node_modules/ packages
 
 // Our useful paths
-const client = path.join(__dirname, "..", "public", "index.html");
+const client = path.join(__dirname, "..", "public");
+const files = {
+    "index": path.join(client, "index.html"),
+    "error404": path.join(client, "error404.html")
+}
 // Our useful paths
 console.log(client);
 // Our static files & body parsers.
@@ -17,15 +21,23 @@ app.use(bodyParser.json());
 
 app.get("/", (request, response) => {
     console.log("Hello world!");
-    response.sendFile(client, (err) => {
-        if(err) console.error(err);
+    response.sendFile(files.index, err => {
+        if(err){
+            response.sendFile(files.error404, err => {
+                if(err) console.error(err);
+            });
+        }
     });
 });
 
 app.post("/", (request, response) => {
     console.log("POST.");
-    response.sendFile(client, (err) => {
-        if(err) console.error(err);
+    response.sendFile("/error.html", err => {
+        if(err){
+           response.sendFile(files.error404, err => {
+               if(err) console.error(err);
+           });
+        }        
     });
 });
 
